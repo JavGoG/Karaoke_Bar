@@ -1,4 +1,9 @@
 class Guest:
-    def __init__(self, name, room):
+    def __init__(self, name):
         self.name = name
-        self.room = room
+
+    
+    def check_in_guests_to_rooms(self, guest_name, room_to_add):
+        for room in self.list_of_rooms:
+            if room[room_to_add] == room_to_add:
+                self.list_of_rooms[room_to_add] = guest_name

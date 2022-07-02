@@ -1,18 +1,19 @@
 from classes.guest import Guest
 import unittest
 
-class TestRoom:
-    def __init__(self, name, name_of_guest):
-        self.name = name
-        self.name_of_guest = name_of_guest
+class TestRoom(unittest.TestCase):
+    
+    def setUp(self):
+        self.guest1 = Guest("Peter", "Rock")
+        self.guest2 = Guest("Thomas", "Opera")
         self.list_of_rooms = [
                                 {"Rock":[]  },
                                 {"Pop":[] },
                                 {"Opera":[] }
                             ]
-    def setUp(self):
-        self.guest1 = self.Guest("Peter", "Rock")
     
     def test_check_in_guests_to_rooms(self):
-        self.assertEgual("Peter", self.list_of_rooms[0][self.guest1.room])
+        self.assertEqual("Peter", self.guest1.check_in_guests_to_rooms(self.guest1.name, self.guest1.room))
+    
+    
         
