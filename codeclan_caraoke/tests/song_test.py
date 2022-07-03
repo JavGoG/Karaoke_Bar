@@ -1,11 +1,12 @@
 import unittest
 from classes.song import Song
+import pdb
 
 class TestSong(unittest.TestCase):
 
     def setUp(self):
-        self.song1 = Song("Highway to Hell")
+        self.song1 = Song("Highway to Hell", "Rock")        
 
-    def intro_rock_song_list_test(self):
-        self.assertEqual(True,"Highway to hell" in  self.song1.rock_songs_list)
-        
+    def test_song_go_to_different_list(self):
+        # pdb.set_trace()
+        self.assertEqual("Highway to Hell",self.song1.song_go_to_different_list("Highway to Hell", "Rock"))
