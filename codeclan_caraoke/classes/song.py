@@ -28,9 +28,10 @@ class Song:
     #     self.opera_songs_list += new_song
     
     def play_song(self, favourite):
-        for favourite in self.list_of_songs:
-            for song in favourite:
-                print("Whohoo!")
+        for list in self.list_of_songs:
+            for song in list:
+                if song == favourite:
+                    print("Whohoo!")
 
     def add_rock_list_to_all_songs_list(self):
         self.list_of_lists_of_songs += self.rock_songs_list
