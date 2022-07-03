@@ -1,5 +1,7 @@
 from sre_constants import GROUPREF_LOC_IGNORE
-from classes import guest
+from classes.guest import Guest
+from classes.song  import Song
+
 class Room:
     def __init__(self, name_of_room, capacity,fee):
         self.name_of_room = name_of_room
@@ -9,8 +11,6 @@ class Room:
         self.fee = fee
         self.list_of_room_lists =[]
         self.fee_total = 0
-    
-    
     
     def check_in_guests_to_room(self, guest_name, room_to_add, fee):
         if room_to_add in self.list_of_rooms:
